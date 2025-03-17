@@ -1,19 +1,20 @@
 import { getTypeIcon } from "../libs/utils";
 
-
-const ContactRow = ({ contact }) => {
+const ContactRow = ({ contact, onClick }) => {
     const { fullname, phonenumber, email, type } = contact;
 
     return (
-        <li className="contact-row">
-            <span className="contact-type">{getTypeIcon(type)}</span>
-            <div className="contact-info">
-                <span className="contact-name">{fullname}</span>
-                <div className="contact-data">
-                <span className="contact-phone">{phonenumber}</span>
-                <span className="contact-mail">{email}</span>
+        <li 
+            className="py-3 hover:bg-indigo-50 transition cursor-pointer flex items-center"
+            onClick={onClick}
+        >
+            <span className="text-2xl mr-3">{getTypeIcon(type)}</span>
+            <div className="flex flex-col">
+                <span className="font-medium text-gray-800">{fullname}</span>
+                <div className="flex gap-4 text-sm text-gray-600">
+                    <span>{phonenumber}</span>
+                    <span>{email}</span>
                 </div>
-                
             </div>
         </li>
     );
