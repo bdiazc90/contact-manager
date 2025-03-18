@@ -1,6 +1,6 @@
 import { getTypeIcon } from "../libs/utils";
 
-export default function ContactDetail({ contact }) {
+export default function ContactPinned({ contact }) {
     return (
         <div className="bg-white rounded-lg shadow-sm p-6">
             <h2 className="text-xl font-semibold mb-4 text-indigo-600">Contacto Destacado</h2>
