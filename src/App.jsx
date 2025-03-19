@@ -1,11 +1,12 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import HomePage from "./pages/HomePage";
 import NewContactPage from "./pages/NewContactPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 export default function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <div className="max-w-screen-xl mx-auto">
         <Header />
         
@@ -17,16 +18,9 @@ export default function App() {
           <Route path="/nuevo" element={<NewContactPage />} />
           
           {/* Ruta para manejar cualquier otra URL no definida */}
-          <Route path="*" element={
-            <div className="flex items-center justify-center h-96 mt-16 p-4">
-              <div className="text-center">
-                <h2 className="text-2xl font-bold text-gray-800 mb-2">Página no encontrada</h2>
-                <p className="text-gray-600">La página que buscas no existe.</p>
-              </div>
-            </div>
-          } />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </div>
-    </Router>
+    </BrowserRouter>
   );
 }

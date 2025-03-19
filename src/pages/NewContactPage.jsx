@@ -38,7 +38,7 @@ function NewContactPage() {
       
       {/* Mostrar el formulario si no hay mensaje de éxito */}
       {!successMessage && (
-        <div className="bg-white rounded-lg shadow-sm p-6 mb-8">
+        <div className="bg-white border-2 border-orange-200 rounded-lg shadow-sm p-6 mb-8">
           <p className="text-gray-600 mb-6">
             Completa el formulario para añadir un nuevo contacto a tu lista.
           </p>
